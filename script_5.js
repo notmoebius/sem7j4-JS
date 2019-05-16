@@ -27,13 +27,49 @@ const books = [
 
 // Est-ce que tous les livres ont été au moins empruntés une fois ?
 for(let index in books) {
-    //console.log(weekAttribut + "->" + weeksOfTHPObject[weekAttribut]); //weekAttribut va avoir les valeurs "Semaine5" à "Semaine8"
-    (book['rented']>1) ? console.log(books[index]);
-  }
-
-  for(let weekAttribut in weeksOfTHPObject) {
-    console.log(weekAttribut + "->" + weeksOfTHPObject[weekAttribut]); //weekAttribut va avoir les valeurs "Semaine5" à "Semaine8"
-    //console.log(weeksOfTHPObject[weekAttribut]);
-  }
+    // console.log(books[index]['title']); 
+    (books[index]['rented']>1) ? console.log(books[index]['title'] + " empruntés plus d'une fois "):console.log('jamais empruntés ou une fois');
+}
+console.log('---------------------------');
 
 //Quel est livre le plus emprunté ?
+let moreRead = "";
+let pred = 0;
+
+books.forEach(book => {
+    if (book.rented > pred) {
+        pred = book.rented;
+        moreRead = book.title;
+    }
+  });
+console.log(moreRead);
+console.log('---------------------------');
+
+// Quel est le livre le moins emprunté ?
+let lessRead = "";
+let pred2 = 100000; //c'est pas propore mais je verai la correction des best...
+
+books.forEach(book => {
+    if (book.rented < pred) {
+        pred = book.rented;
+        lessRead = book.title;
+    }
+  });
+console.log(lessRead);
+console.log('---------------------------');
+
+// Trouve le livre avec l'ID: 873495 
+let livre = books.find(item => item.id == 873495);
+console.log("le livre avec l'ID: 873495 est :" + livre.title);
+console.log('---------------------------');
+
+// Supprime le livre avec l'ID: 133712 ;
+let bookDelete = books.findIndex(item => item.id == 133712);
+delete books[bookDelete];
+console.log("le livre "  + bookDelete.title + "avec l'ID: 133712 a été supprimé.");
+console.log('---------------------------');
+
+// Trie les livres par ordre alphabétique.
+books.sort((a, b) => (a.title > b.title) ? 1 : -1);
+console.log(books);
+console.log('---------------------------');

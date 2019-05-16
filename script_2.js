@@ -16,4 +16,4 @@ function factorielle(myNumber) {
     return fact;
 }
 
-alert(`Le résultat est : ${factorielle(myNumber)}`);
+console.log(`Le résultat est : ${factorielle(myNumber)}`);

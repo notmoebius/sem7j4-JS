@@ -15,7 +15,7 @@ let i = 1
 while (i<=numLevel) {
     let line  = "";
     for (let k = 0; k < (numLevel-i); k++) {
-        line += " s"  
+        line += " "  
     }
     for (let index = 0; index < i; index++) {
         line = line + brick;

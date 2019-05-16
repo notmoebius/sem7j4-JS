@@ -7,6 +7,7 @@ CGU ou CGC ou CGA ou CGG ou AGA ou AGG => Arginine
 UAU ou UAC => Tyrosine
 */
 
+//Effectue la traduction en fonction du codon
 function conversionProteine (codon) {
     switch (codon) {
         case 'UCU':
@@ -43,6 +44,7 @@ function conversionProteine (codon) {
       };
 }
 
+// Décompse les 3 acides aminés en groupe à traduire
 function decomposeArn(arn) {
     let arrayArn = [];
     long = arn.length;
@@ -51,21 +53,19 @@ function decomposeArn(arn) {
         arrayArn.push(arn.slice(i, i+3));
         i = i + 3;
     }
-    // arrayArn.push(arn.slice(0, 3));
-    // arrayArn.push(arn.slice(3, 6));
-    // arrayArn.push(arn.slice(6, 9));
-    // arrayArn.push(arn.slice(9, 12));
     return arrayArn;
 }
 
-
+// Prendre l'ARN
+// Décompose avec une fonction dans un tableau
+// Parcourt du tableau pour traduire en protéine
 function afficheProteine(arnToDecode) {
-    let proteine = decomposeArn(arnToDecode);
+    let proteine = decomposeArn(arnToDecode); // décompose ARN
     let arrayProteine = [];
     for (let i = 0; i < proteine.length-1; i++) {
-        arrayProteine.push(conversionProteine(proteine[i])); 
+        arrayProteine.push(conversionProteine(proteine[i]));   // tradcution codons en clair
     }
-    console.log(`ARN à décoder : ${arnToDecode} en ${arrayProteine.join('-')}`);
+    console.log(`ARN à décoder : ${arnToDecode} en ${arrayProteine.join('-')}`);  // Affiche la traduction
 }
 
 // ARN à décoder = "UUACGCAGUAGA";

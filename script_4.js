@@ -42,7 +42,7 @@ for(let index in someBoss) {
 console.log('--------------------- ');
 
 //Sors une array qui contient le prénom et le nom des entrepreneurs ;
-console.log('--------------------- array prénom et nom');
+console.log('--------------------- Array avec prénom et nom des boss');
 let identify = [];
 for(let index in entrepreneurs) {
     let temp = entrepreneurs[index].first + " " + entrepreneurs[index].last;
@@ -52,14 +52,14 @@ for(let index in entrepreneurs) {
 console.log('--------------------- ');
 
 // Quel âge aurait chaque entrepreneur aujourd'hui ?
-console.log('--------------------- age de chaque entrepreneur');
+console.log('--------------------- Age de chaque entrepreneur en 2019');
 for(let index in entrepreneurs) {
     console.log(entrepreneurs[index].first + " " + entrepreneurs[index].last + " aurait :" + (2019 - entrepreneurs[index].year) + " ans");
 }
 console.log('--------------------- ');
 
 //Trie les entrepreneurs par ordre alphabétique du nom de famille.
-console.log('--------------------- tri nom de famille des entrepreneurs');
+console.log('--------------------- Tri nom de famille des entrepreneurs');
 // je créé un array avec nom et préom pour trier
 let lastNameBoss = [];
 for(let index in entrepreneurs) {
